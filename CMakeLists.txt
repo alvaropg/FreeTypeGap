@@ -3,7 +3,9 @@ cmake_minimum_required(VERSION 3.10)
 project(freetype-test)
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(FREETYPE2 REQUIRED freetype2)
+pkg_check_modules(FREETYPE2 REQUIRED
+  freetype2
+  fontconfig)
 
 add_executable(${PROJECT_NAME} src/main.c)
 target_link_libraries(${PROJECT_NAME} ${FREETYPE2_LIBRARIES})
