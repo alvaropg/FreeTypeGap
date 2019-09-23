@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
         }
         t = clock() - t;
         time_taken = ((double) t) / CLOCKS_PER_SEC;
-        printf("%d Took %f seconds\n", measure_num++, time_taken);
+        printf("%d Init took %f seconds\n", measure_num++, time_taken);
 
         t = clock();
         error = FT_New_Face(library,
@@ -35,9 +35,7 @@ int main(int argc, char *argv[])
         }
         t = clock() - t;
         time_taken = ((double) t) / CLOCKS_PER_SEC;
-        printf("%d Took %f seconds\n", measure_num++, time_taken);        
-
-        printf("Font info: Glyphs: %ld\n", face->num_glyphs);
+        printf("%d Face load took %f seconds\n", measure_num++, time_taken);
 
         return 0;
 }
